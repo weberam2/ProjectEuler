@@ -34,3 +34,13 @@ def primelist(N):
         if is_prime[i] == 1:
             primelist.append(i)
     return primelist
+
+def num_divisors(n):
+    import math
+    end = math.floor(math.sqrt(n))
+    result = sum(2
+        for i in range(1, end + 1)
+        if n % i == 0)
+    if end**2 == n:
+        result -= 1
+    return result
